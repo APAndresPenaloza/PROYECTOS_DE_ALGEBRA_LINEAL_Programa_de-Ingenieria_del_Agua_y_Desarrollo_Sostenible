@@ -73,7 +73,7 @@
           <p class="ayuda" style="margin:0 0 10px">Arma un informe con los resultados de las transformaciones que elija y le agrega un código QR. Por defecto el QR abre el simulador con exactamente los mismos valores, para que cualquiera pueda reproducir y revisar la simulación.</p>
           <label class="campo">Título<input id="rep-tit" value="Informe de simulación: transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua"></label>
           <label class="campo">Autor o autores<input id="rep-aut" placeholder="Nombres y apellidos de los integrantes"></label>
-          <label class="campo">Institución, curso o grupo<input id="rep-ins" value="Álgebra Lineal, Programa de Ingeniería del Agua, Universidad de Santa Marta"></label>
+          <label class="campo">Institución, curso o grupo<input id="rep-ins" value="Álgebra Lineal Aplicada, Programa de Ingeniería del Agua, Universidad de Santa Marta"></label>
           <label class="campo">Fecha<input type="date" id="rep-fecha" value="${fecha}"></label>
           <label class="campo">Observaciones y conclusiones<textarea id="rep-obs" placeholder="¿Qué transformación analizó? ¿Qué conserva y qué modifica? ¿Para qué decisión de ingeniería del agua sirve?"></textarea></label>
         </section>
@@ -249,7 +249,7 @@
       const aut = $('#rep-aut').value.trim(), ins = $('#rep-ins').value.trim(), fec = $('#rep-fecha').value, obs = $('#rep-obs').value.trim();
       const u = INF.urlQR();
       const fechaTxt = fec ? new Date(fec + 'T12:00:00').toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
-      let h = `<article class="hoja"><div class="h-cab"><div><p class="h-sup">Informe de simulación del proyecto de Álgebra Lineal</p><h1>${esc(tit)}</h1><table class="h-meta">` +
+      let h = `<article class="hoja"><div class="h-cab"><div><p class="h-sup">Informe de simulación del proyecto de Álgebra Lineal Aplicada</p><h1>${esc(tit)}</h1><table class="h-meta">` +
         (aut ? `<tr><td>Autor(es)</td><td>${esc(aut)}</td></tr>` : '') + (ins ? `<tr><td>Curso</td><td>${esc(ins)}</td></tr>` : '') +
         (fechaTxt ? `<tr><td>Fecha</td><td>${esc(fechaTxt)}</td></tr>` : '') +
         `<tr><td>Simulador</td><td>Transformaciones lineales en R² y R³, versión 1.0</td></tr>` +

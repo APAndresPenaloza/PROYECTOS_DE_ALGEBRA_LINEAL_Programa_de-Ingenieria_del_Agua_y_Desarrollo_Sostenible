@@ -1,6 +1,6 @@
 /* Manual de usuario del simulador (versión web y PDF). */
 'use strict';
-const { SITIO, REPO, AUTORES, AUTORES_TEXTO, PROFESORES, DURACION_BASE, VELOCIDADES, guion, duracionTexto, velTexto } = require('./datos.js');
+const { SITIO, REPO, AUTORES, AUTORES_TEXTO, PROFESORES, CURSO, DURACION_BASE, VELOCIDADES, guion, duracionTexto, velTexto } = require('./datos.js');
 const r = String.raw;
 const p = (texto, op = {}) => Object.assign({ t: 'p', texto }, op);
 const ps = texto => ({ t: 'p', texto, sinSangria: true });
@@ -23,10 +23,10 @@ module.exports = {
   descargas: [{ href: 'documentos/Manual_de_usuario_Simulador_Transformaciones.pdf', texto: 'Descargar PDF' }],
   qr: { src: 'img/qr/qr_manual.png', alt: 'dirección de este manual', texto: 'Escanee para abrir este manual' },
   bloques: [
-    { t: 'portada', titulo: TITULO, autor: AUTORES, afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: 'Álgebra Lineal', profesor: PROFESORES, fecha: 'Versión 1.0, noviembre de 2026' },
+    { t: 'portada', titulo: TITULO, autor: AUTORES, afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: CURSO, profesor: PROFESORES, fecha: 'Versión 1.0, noviembre de 2026' },
 
     h1('Para qué sirve el simulador'),
-    ps('El simulador desarrolla el proyecto de Álgebra Lineal del Programa de Ingeniería del Agua: aplica transformaciones lineales a dos estaciones hidrométricas en planta (conjunto U, en R²) y a dos puntos de una cuenca con su cota (conjunto V, en R³), muestra la matriz de cada transformación con su desarrollo paso a paso y explica, con lenguaje de ingeniería del agua, qué conserva y qué modifica cada una. Incluye las seis transformaciones del proyecto (T1 a T6), un laboratorio con todas las familias de la guía, un módulo de composición y un generador de informes con código QR.'),
+    ps('El simulador desarrolla el proyecto de Álgebra Lineal Aplicada del Programa de Ingeniería del Agua: aplica transformaciones lineales a dos estaciones hidrométricas en planta (conjunto U, en R²) y a dos puntos de una cuenca con su cota (conjunto V, en R³), muestra la matriz de cada transformación con su desarrollo paso a paso y explica, con lenguaje de ingeniería del agua, qué conserva y qué modifica cada una. Incluye las seis transformaciones del proyecto (T1 a T6), un laboratorio con todas las familias de la guía, un módulo de composición y un generador de informes con código QR.'),
     nota('<p><b>Resumen rápido.</b> Elija una transformación en el panel izquierdo, observe la animación en el visor y lea abajo la matriz, el producto paso a paso y las propiedades. Para entregar resultados, use la pestaña «Informe con QR».</p>'),
 
     h1('Cómo abrirlo'),

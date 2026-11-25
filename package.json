@@ -1,7 +1,7 @@
 {
   "name": "transformaciones-lineales-r2-r3-ingenieria-del-agua",
   "version": "1.0.0",
-  "description": "Simulador 3D de transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua (Álgebra Lineal, Universidad de Santa Marta).",
+  "description": "Simulador 3D de transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua (Álgebra Lineal Aplicada, Universidad de Santa Marta).",
   "private": true,
   "scripts": {
     "pruebas": "node pruebas/motores.test.js",

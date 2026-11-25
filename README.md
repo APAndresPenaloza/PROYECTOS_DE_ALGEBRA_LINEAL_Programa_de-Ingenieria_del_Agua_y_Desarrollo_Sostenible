@@ -1,6 +1,6 @@
 # Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua
 
-Simulador web 3D del proyecto de **Álgebra Lineal** del Programa de Ingeniería del Agua (Universidad de Santa Marta, 2026). Aplica escalamiento, rotación, homotecia, reflexión y cizallamiento a dos estaciones hidrométricas en planta (conjunto **U**) y a dos puntos de una cuenca con su cota (conjunto **V**), muestra cada matriz con su desarrollo paso a paso y explica qué conserva y qué modifica cada transformación en términos de ingeniería del agua.
+Simulador web 3D del proyecto de **Álgebra Lineal Aplicada** del Programa de Ingeniería del Agua (Universidad de Santa Marta, 2026). Aplica escalamiento, rotación, homotecia, reflexión y cizallamiento a dos estaciones hidrométricas en planta (conjunto **U**) y a dos puntos de una cuenca con su cota (conjunto **V**), muestra cada matriz con su desarrollo paso a paso y explica qué conserva y qué modifica cada transformación en términos de ingeniería del agua.
 
 | | Enlace |
 |---|---|
@@ -109,7 +109,7 @@ Todos los cálculos y los informes se generan en el navegador; el sitio no tiene
 - Andrés Mauricio Peñaloza Fernández
 - Eliana Carolina María Wong Lubo
 
-Profesores de Álgebra Lineal: Dr. Ellery G. Chacuto López y Luis Mario Duarte. Profesores de Introducción a las Ciencias del Agua y a la Tecnología: Ing. Jaris González e Ing. David De León.
+Profesor principal: PhD Ellery G. Chacuto López (Álgebra Lineal Aplicada). Profesores: Luis Mario Duarte (Álgebra Lineal Aplicada); Ing. Jaris González e Ing. David De León (Introducción a las Ciencias del Agua y a la Tecnología).
 
 ## Cómo citar
 

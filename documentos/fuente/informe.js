@@ -1,7 +1,7 @@
 /* Contenido del informe del proyecto (normas APA 7). Lo compila compilar.js. */
 'use strict';
 const D = require('./datos.js');
-const { T, C, f, fc, fx, vt, mx, colx, exp10, val, SITIO, REPO, AUTORES, AUTORES_TEXTO, PROFESORES, DURACION_BASE, VELOCIDADES, guion, mmss, velTexto } = D;
+const { T, C, f, fc, fx, vt, mx, colx, exp10, val, SITIO, REPO, AUTORES, AUTORES_TEXTO, PROFESORES, CURSO, DURACION_BASE, VELOCIDADES, guion, mmss, velTexto } = D;
 const r = String.raw;
 
 const p = (texto, op = {}) => Object.assign({ t: 'p', texto }, op);
@@ -24,7 +24,7 @@ module.exports = {
   titulo: TITULO,
   tituloCorto: 'Informe del proyecto: transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua',
   autor: AUTORES_TEXTO,
-  descripcion: 'Informe en normas APA 7 del proyecto de Álgebra Lineal (Ingeniería del Agua, Universidad de Santa Marta): seis transformaciones lineales aplicadas a estaciones hidrométricas y a una cuenca, composición de matrices y simulador 3D.',
+  descripcion: 'Informe en normas APA 7 del proyecto de Álgebra Lineal Aplicada (Ingeniería del Agua, Universidad de Santa Marta): seis transformaciones lineales aplicadas a estaciones hidrométricas y a una cuenca, composición de matrices y simulador 3D.',
   pie: `Informe del proyecto «Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua». ${AUTORES_TEXTO}, 2026.`,
   descargas: [
     { href: 'documentos/Informe_Transformaciones_Lineales_R2_R3.pdf', texto: 'Descargar PDF' },
@@ -32,7 +32,7 @@ module.exports = {
   ],
   qr: { src: 'img/qr/qr_simulador.png', alt: 'dirección del simulador', texto: 'Escanee para abrir el simulador' },
   bloques: [
-    { t: 'portada', titulo: TITULO, autor: AUTORES, afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: 'Álgebra Lineal', profesor: PROFESORES, fecha: '25 de noviembre de 2026' },
+    { t: 'portada', titulo: TITULO, autor: AUTORES, afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: CURSO, profesor: PROFESORES, fecha: '25 de noviembre de 2026' },
     {
       t: 'resumen',
       texto: [r`Este proyecto aplica las transformaciones lineales del plano y del espacio a información espacial propia de la ingeniería del agua. Siguiendo la guía del curso, se transformó el conjunto U = {(4, 5), (−3, 4)}, que representa las posiciones en planta de dos estaciones hidrométricas, y el conjunto V = {(4, 5, 3), (−3, 4, 4)}, que agrega su cota. En R² se desarrollaron una rotación de ejes que alinea el sistema con el tramo de río entre las estaciones (α = arctan(1/7) ≈ 8,13°), una homotecia que dibuja las estaciones en un plano a escala 1:50 000 y un cizallamiento que modela la deformación de un trazador por flujo cortante; en R³, una rotación alrededor del eje vertical que lleva ambos puntos al plano del perfil longitudinal, una exageración vertical 2:1 y una reflexión respecto al plano xy que convierte cotas en profundidades. Cada transformación se interpreta a partir del determinante, la ortogonalidad y los autovalores, y se analiza la composición: en R² la rotación y el cizallamiento no conmutan, mientras que las tres transformaciones de R³ sí lo hacen. Los cálculos se programaron en tres motores independientes (Python con NumPy, C++ compilado a WebAssembly y JavaScript), cuya mayor diferencia fue ${exp10(val.mayor_diferencia)}, y se integraron en un simulador web 3D con informe reproducible mediante código QR.`],

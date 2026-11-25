@@ -190,7 +190,11 @@ function docxDe(doc) {
         hijos.push(new Paragraph({ children: [] }));
         // Profesores: «Profesores de <curso>: <nombres>»; los nombres no se parten entre líneas
         // (espacios duros), así un renglón largo se corta después de los dos puntos.
-        const profesores = [].concat(b.profesor || []).map(x => typeof x === 'string' ? x : `Profesores de ${x.curso}: ${x.nombres.replace(/ /g, '\u00a0')}`);
+        const duro = t => t.replace(/ /g, '\u00a0');
+        const varios = t => / (y|e) /.test(t);
+        const profesores = b.profesor && b.profesor.principal
+          ? [`Profesor principal: ${duro(b.profesor.principal)}`, ...b.profesor.otros.map(x => `${varios(x.nombres) ? 'Profesores' : 'Profesor'} de ${x.curso}: ${duro(x.nombres)}`)]
+          : [].concat(b.profesor || []).map(x => typeof x === 'string' ? x : `Profesores de ${x.curso}: ${duro(x.nombres)}`);
         [[].concat(b.autor || []).join(' y '), b.afiliacion, b.curso, ...profesores, b.fecha].filter(Boolean).forEach(l => hijos.push(new Paragraph({ alignment: AlignmentType.CENTER, children: enLineaDocx(l) })));
         romper = true;
         break;
@@ -292,7 +296,9 @@ function htmlDe(doc) {
       case 'portada':
         cuerpo += `<header class="doc-portada"><p class="doc-tipo">${esc(doc.tipo)}</p><h1>${enLineaHTML(b.titulo)}</h1>` +
           `<dl class="doc-meta">${b.autor ? `<dt>${[].concat(b.autor).length > 1 ? 'Autores' : 'Autor'}</dt><dd>${[].concat(b.autor).map(enLineaHTML).join('<br>')}</dd>` : ''}${b.afiliacion ? `<dt>Programa</dt><dd>${enLineaHTML(b.afiliacion)}</dd>` : ''}` +
-          `${b.curso ? `<dt>Curso</dt><dd>${enLineaHTML(b.curso)}</dd>` : ''}${b.profesor ? `<dt>${[].concat(b.profesor).length > 1 ? 'Profesores' : 'Profesor'}</dt><dd>${[].concat(b.profesor).map(x => typeof x === 'string' ? enLineaHTML(x) : `${enLineaHTML(x.curso)}: ${nombresHTML(x.nombres)}`).join('<br>')}</dd>` : ''}${b.fecha ? `<dt>Fecha</dt><dd>${enLineaHTML(b.fecha)}</dd>` : ''}</dl>` +
+          `${b.curso ? `<dt>Curso</dt><dd>${enLineaHTML(b.curso)}</dd>` : ''}${b.profesor && b.profesor.principal
+            ? `<dt>Profesor principal</dt><dd>${nombresHTML(b.profesor.principal)}</dd><dt>Profesores</dt><dd>${b.profesor.otros.map(x => `${enLineaHTML(x.curso)}: ${nombresHTML(x.nombres)}`).join('<br>')}</dd>`
+            : b.profesor ? `<dt>${[].concat(b.profesor).length > 1 ? 'Profesores' : 'Profesor'}</dt><dd>${[].concat(b.profesor).map(x => typeof x === 'string' ? enLineaHTML(x) : `${enLineaHTML(x.curso)}: ${nombresHTML(x.nombres)}`).join('<br>')}</dd>` : ''}${b.fecha ? `<dt>Fecha</dt><dd>${enLineaHTML(b.fecha)}</dd>` : ''}</dl>` +
           `<div class="doc-descargas">${(VISTA ? [] : doc.descargas || []).map(d => `<a class="btn-doc" href="${esc(d.href)}" download>${esc(d.texto)}</a>`).join('')}</div>` +
           (doc.qr ? `<figure class="doc-qr"><img src="${esc(doc.qr.src)}" alt="Código QR: ${esc(doc.qr.alt)}" width="112" height="112"><figcaption>${esc(doc.qr.texto)}</figcaption></figure>` : '') + '</header>';
         break;
