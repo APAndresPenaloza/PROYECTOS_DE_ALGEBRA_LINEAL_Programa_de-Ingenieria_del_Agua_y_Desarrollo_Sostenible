@@ -1,6 +1,6 @@
 /* Manual de usuario del simulador (versión web y PDF). */
 'use strict';
-const { SITIO, REPO, DURACION_BASE, VELOCIDADES, guion, duracionTexto, velTexto } = require('./datos.js');
+const { SITIO, REPO, AUTORES, AUTORES_TEXTO, PROFESORES, DURACION_BASE, VELOCIDADES, guion, duracionTexto, velTexto } = require('./datos.js');
 const r = String.raw;
 const p = (texto, op = {}) => Object.assign({ t: 'p', texto }, op);
 const ps = texto => ({ t: 'p', texto, sinSangria: true });
@@ -17,13 +17,13 @@ module.exports = {
   tipo: 'Manual de usuario',
   titulo: TITULO,
   tituloCorto: 'Manual de usuario: simulador 3D de transformaciones lineales en R² y R³',
-  autor: 'Andrés Mauricio Peñaloza Fernández',
+  autor: AUTORES_TEXTO,
   descripcion: 'Manual de usuario del simulador 3D de transformaciones lineales en R² y R³ para la ingeniería del agua: módulos, visor, panel de cálculo, composición, informe con QR, recorrido guiado, scripts de Python y núcleo C++.',
-  pie: 'Manual de usuario del simulador «Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua», versión 1.0. Andrés Mauricio Peñaloza Fernández, 2026.',
+  pie: `Manual de usuario del simulador «Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua», versión 1.0. ${AUTORES_TEXTO}, 2026.`,
   descargas: [{ href: 'documentos/Manual_de_usuario_Simulador_Transformaciones.pdf', texto: 'Descargar PDF' }],
   qr: { src: 'img/qr/qr_manual.png', alt: 'dirección de este manual', texto: 'Escanee para abrir este manual' },
   bloques: [
-    { t: 'portada', titulo: TITULO, autor: 'Andrés Mauricio Peñaloza Fernández', afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: 'Álgebra Lineal', fecha: 'Versión 1.0, noviembre de 2026' },
+    { t: 'portada', titulo: TITULO, autor: AUTORES, afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: 'Álgebra Lineal', profesor: PROFESORES, fecha: 'Versión 1.0, noviembre de 2026' },
 
     h1('Para qué sirve el simulador'),
     ps('El simulador desarrolla el proyecto de Álgebra Lineal del Programa de Ingeniería del Agua: aplica transformaciones lineales a dos estaciones hidrométricas en planta (conjunto U, en R²) y a dos puntos de una cuenca con su cota (conjunto V, en R³), muestra la matriz de cada transformación con su desarrollo paso a paso y explica, con lenguaje de ingeniería del agua, qué conserva y qué modifica cada una. Incluye las seis transformaciones del proyecto (T1 a T6), un laboratorio con todas las familias de la guía, un módulo de composición y un generador de informes con código QR.'),

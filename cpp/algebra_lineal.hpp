@@ -2,7 +2,7 @@
 // algebra_lineal.hpp — Núcleo de álgebra lineal del motor C++ (2×2 y 3×3)
 // ----------------------------------------------------------------------------
 // Proyecto: Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua
-// Autor:    Andrés Mauricio Peñaloza Fernández · Universidad de Santa Marta · 2026
+// Autores:  Andrés Mauricio Peñaloza Fernández y Eliana Carolina María Wong Lubo · Universidad de Santa Marta · 2026
 //
 // Sin dependencias (ni libc ni STL) para poder compilarse a WebAssembly.
 // Matrices en orden por filas: a[i*n + j] = elemento (i, j), con n = 2 o 3.

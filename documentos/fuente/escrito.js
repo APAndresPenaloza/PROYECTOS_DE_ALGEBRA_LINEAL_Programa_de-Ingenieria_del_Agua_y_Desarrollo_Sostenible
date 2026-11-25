@@ -14,16 +14,16 @@ module.exports = {
   tipo: 'Escrito argumentativo (normas APA 7)',
   titulo: TITULO,
   tituloCorto: 'Escrito: la importancia de las transformaciones lineales en el ejercicio del ingeniero del agua',
-  autor: 'Andrés Mauricio Peñaloza Fernández',
+  autor: D.AUTORES_TEXTO,
   descripcion: 'Escrito argumentativo sobre la importancia de las transformaciones lineales en la profesión del ingeniero del agua (proyecto de Álgebra Lineal, Universidad de Santa Marta).',
-  pie: 'Escrito del proyecto «Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua». Andrés Mauricio Peñaloza Fernández, 2026.',
+  pie: `Escrito del proyecto «Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua». ${D.AUTORES_TEXTO}, 2026.`,
   descargas: [
     { href: 'documentos/Escrito_Importancia_Transformaciones_Lineales.pdf', texto: 'Descargar PDF' },
     { href: 'documentos/Escrito_Importancia_Transformaciones_Lineales.docx', texto: 'Descargar Word' },
   ],
   qr: { src: 'img/qr/qr_escrito.png', alt: 'dirección de este escrito', texto: 'Escanee para abrir este escrito' },
   bloques: [
-    { t: 'portada', titulo: TITULO, autor: 'Andrés Mauricio Peñaloza Fernández', afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: 'Álgebra Lineal', profesor: 'Dr. Ellery G. Chacuto López', fecha: '25 de noviembre de 2026' },
+    { t: 'portada', titulo: TITULO, autor: D.AUTORES, afiliacion: 'Programa de Ingeniería del Agua, Universidad de Santa Marta', curso: 'Álgebra Lineal', profesor: D.PROFESORES, fecha: '25 de noviembre de 2026' },
     { t: 'titulo', texto: TITULO },
     p('Cuando se piensa en el ingeniero del agua se imaginan caudales, presas, redes de tuberías y plantas de tratamiento, no matrices. Sin embargo, antes de calcular un caudal hay que saber dónde está cada cosa: en qué punto se mide el nivel de un río, por dónde pasa el cauce, qué cota tiene la corona de una presa, qué área drena hacia una estación. Toda esa información es espacial, y la herramienta matemática que permite moverla, medirla y representarla sin perder su significado es la transformación lineal. Este escrito sostiene que las transformaciones lineales no son un tema auxiliar del álgebra, sino una competencia profesional del ingeniero del agua, porque están presentes en cada plano que dibuja, en cada modelo que construye y en cada decisión que toma a partir de información espacial.'),
 

@@ -10,7 +10,7 @@
 //   [  0.. 8]  matriz A (por filas)          [  9..17]  matriz B
 //   [ 18..26]  resultado matricial           [ 32..]    puntos de entrada (n coordenadas c/u)
 //   [512..]    imágenes de los puntos        [ 64..]    propiedades (ver tl_propiedades)
-// Autor: Andrés Mauricio Peñaloza Fernández · Universidad de Santa Marta · 2026
+// Autores: Andrés Mauricio Peñaloza Fernández y Eliana Carolina María Wong Lubo · Universidad de Santa Marta · 2026
 // ============================================================================
 #include "algebra_lineal.hpp"
 

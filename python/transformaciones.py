@@ -3,7 +3,7 @@ transformaciones.py — Motor de ecuaciones en Python (NumPy)
 ===========================================================
 
 Proyecto: Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua
-Autor:    Andrés Mauricio Peñaloza Fernández
+Autores:  Andrés Mauricio Peñaloza Fernández y Eliana Carolina María Wong Lubo
 Curso:    Álgebra Lineal · Programa de Ingeniería del Agua · Universidad de Santa Marta (2026)
 
 Este módulo es la referencia matemática del proyecto. Define:

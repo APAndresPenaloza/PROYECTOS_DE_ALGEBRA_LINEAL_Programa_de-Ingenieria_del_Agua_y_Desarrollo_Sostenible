@@ -13,5 +13,8 @@
     "docx": "9.8.1"
   },
   "author": "Andrés Mauricio Peñaloza Fernández",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "contributors": [
+    "Eliana Carolina María Wong Lubo"
+  ]
 }

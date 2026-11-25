@@ -13,6 +13,14 @@ const js = leer('datos/resultados_js.json');
 const SITIO = 'https://apandrespenaloza.github.io/PROYECTOS_DE_ALGEBRA_LINEAL_Programa_de-Ingenieria_del_Agua_y_Desarrollo_Sostenible/';
 const REPO = 'https://github.com/APAndresPenaloza/PROYECTOS_DE_ALGEBRA_LINEAL_Programa_de-Ingenieria_del_Agua_y_Desarrollo_Sostenible';
 
+// Integrantes del grupo y profesores (portadas, pies y metadatos de los documentos)
+const AUTORES = ['Andrés Mauricio Peñaloza Fernández', 'Eliana Carolina María Wong Lubo'];
+const AUTORES_TEXTO = AUTORES.join(' y ');
+const PROFESORES = [
+  { curso: 'Álgebra Lineal', nombres: 'Dr. Ellery G. Chacuto López y Luis Mario Duarte' },
+  { curso: 'Introducción a las Ciencias del Agua y a la Tecnología', nombres: 'Ing. Jaris González e Ing. David De León' },
+];
+
 /** Número en texto: coma decimal y signo menos tipográfico. */
 function f(x, d = 4) {
   if (Math.abs(x) < 0.5 * 10 ** -d) x = 0;
@@ -65,5 +73,5 @@ const T = {}, C = {};
 ref.transformaciones.forEach(t => (T[t.clave] = t));
 ref.composiciones.forEach(c => (C[c.clave] = c));
 
-module.exports = { ref, val, js, T, C, f, fc, fx, vt, vx, mx, colx, exp10, SITIO, REPO, ALFA: ref.alfa_grados,
+module.exports = { ref, val, js, T, C, f, fc, fx, vt, vx, mx, colx, exp10, SITIO, REPO, ALFA: ref.alfa_grados, AUTORES, AUTORES_TEXTO, PROFESORES,
   DURACION_BASE, VELOCIDADES, guion, mmss, duracionTexto, velTexto };

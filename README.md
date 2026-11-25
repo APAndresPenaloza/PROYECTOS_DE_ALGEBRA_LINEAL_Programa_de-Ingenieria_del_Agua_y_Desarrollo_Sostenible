@@ -104,9 +104,16 @@ make wasm       # WebAssembly (clang con destino wasm32)
 
 Todos los cálculos y los informes se generan en el navegador; el sitio no tiene servidor ni base de datos. El código QR contiene solo la dirección y los valores numéricos de la simulación.
 
+## Autores
+
+- Andrés Mauricio Peñaloza Fernández
+- Eliana Carolina María Wong Lubo
+
+Profesores de Álgebra Lineal: Dr. Ellery G. Chacuto López y Luis Mario Duarte. Profesores de Introducción a las Ciencias del Agua y a la Tecnología: Ing. Jaris González e Ing. David De León.
+
 ## Cómo citar
 
-Peñaloza Fernández, A. M. (2026). *Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua: simulador 3D* (Versión 1.0) [Software]. GitHub. https://apandrespenaloza.github.io/PROYECTOS_DE_ALGEBRA_LINEAL_Programa_de-Ingenieria_del_Agua_y_Desarrollo_Sostenible/
+Peñaloza Fernández, A. M. y Wong Lubo, E. C. M. (2026). *Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua: simulador 3D* (Versión 1.0) [Software]. GitHub. https://apandrespenaloza.github.io/PROYECTOS_DE_ALGEBRA_LINEAL_Programa_de-Ingenieria_del_Agua_y_Desarrollo_Sostenible/
 
 Guía del proyecto: Chacuto López, E. G. (2026). *Proyectos de álgebra lineal: Programa de Ingeniería del Agua*. Universidad de Santa Marta.
 

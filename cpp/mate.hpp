@@ -2,7 +2,7 @@
 // mate.hpp — Funciones matemáticas propias del motor C++ (sin biblioteca estándar)
 // ----------------------------------------------------------------------------
 // Proyecto: Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua
-// Autor:    Andrés Mauricio Peñaloza Fernández · Universidad de Santa Marta · 2026
+// Autores:  Andrés Mauricio Peñaloza Fernández y Eliana Carolina María Wong Lubo · Universidad de Santa Marta · 2026
 //
 // El núcleo se compila tanto en nativo (g++) como a WebAssembly (clang --target=wasm32)
 // sin libc. Por eso seno y coseno se implementan aquí:

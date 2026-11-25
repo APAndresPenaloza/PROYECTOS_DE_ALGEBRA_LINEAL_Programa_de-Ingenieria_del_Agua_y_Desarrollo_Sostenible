@@ -8,7 +8,7 @@
 // Compilar:  make            (o: g++ -std=c++17 -O2 -o motor main.cpp)
 // Ejecutar:  ./motor [ruta_json]
 //
-// Autor: Andrés Mauricio Peñaloza Fernández · Universidad de Santa Marta · 2026
+// Autores: Andrés Mauricio Peñaloza Fernández y Eliana Carolina María Wong Lubo · Universidad de Santa Marta · 2026
 // ============================================================================
 #include <cmath>
 #include <cstdio>
