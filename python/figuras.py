@@ -26,7 +26,9 @@ import transformaciones as tl  # noqa: E402
 AZUL, NARANJA, AGUA = "#257de0", "#f47230", "#00b894"
 TINTA, TINTA2, REJILLA = "#191919", "#666666", "#e6e6e6"
 RAIZ = Path(__file__).resolve().parent.parent
-CARPETA = RAIZ / "img" / "python"
+# Dentro del repositorio las figuras van a img/python (las usa el informe);
+# si los scripts se copian a otra carpeta, se guardan en figuras/ junto a ellos.
+CARPETA = RAIZ / "img" / "python" if (RAIZ / "index.html").exists() else Path(__file__).resolve().parent / "figuras"
 
 plt.rcParams.update({
     "font.family": "DejaVu Sans",

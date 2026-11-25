@@ -94,6 +94,7 @@ def main() -> None:
         ax.set_ylabel("y · norte (km)")
         ax.legend(loc="upper left", fontsize=8.2, framealpha=0.95, edgecolor="#d0d0d0")
     fig.tight_layout()
+    fg.CARPETA.mkdir(parents=True, exist_ok=True)
     ruta = fg.CARPETA / "composicion.png"
     fig.savefig(ruta, facecolor="white")
     print("\nFigura:", ruta)
