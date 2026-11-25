@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transformaciones lineales en R² y R³ para la ingeniería del agua: simulador 3D</title>
+<meta name="description" content="Simulador 3D del proyecto de Álgebra Lineal (Ingeniería del Agua, Universidad de Santa Marta): escalamiento, rotación, homotecia, reflexión y cizallamiento aplicados a estaciones hidrométricas y a una cuenca, con motor de ecuaciones en C++/WebAssembly, JavaScript y Python, e informe con código QR.">
+<meta name="author" content="Andrés Mauricio Peñaloza Fernández">
+<meta property="og:title" content="Transformaciones lineales en R² y R³: simulador 3D para la ingeniería del agua">
+<meta property="og:description" content="Seis transformaciones de la guía del proyecto, composición de matrices e informe con QR.">
+<meta property="og:image" content="img/capturas/simulador_r3.png">
+<meta name="theme-color" content="#13232f">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="lib/fuentes/fuentes.css">
+<link rel="stylesheet" href="lib/katex/katex.min.css">
+<link rel="stylesheet" href="css/simulador.css">
+</head>
+<body>
+<a class="saltar" href="#visor">Ir al simulador</a>
+
+<header class="cabecera">
+  <div class="marca">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="9" fill="#13232f"/><path d="M14 11h-4v26h4M34 11h4v26h-4" stroke="#e9eff2" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 29c2.8-3.6 5.7-3.6 8.5 0s5.7 3.6 8.5 0" stroke="#2fd6c0" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="19" cy="18.5" r="2.4" fill="#5aa9ff"/><circle cx="29" cy="18.5" r="2.4" fill="#ff8f52"/></svg>
+    <div>
+      <h1>Transformaciones lineales en R<sup>2</sup> y R<sup>3</sup></h1>
+      <p>Simulador 3D para la ingeniería del agua. Álgebra Lineal, Universidad de Santa Marta, 2026.</p>
+    </div>
+  </div>
+  <nav class="sitio" aria-label="Documentos del proyecto">
+    <a href="./" aria-current="page">Simulador</a>
+    <a href="informe.html">Informe</a>
+    <a href="manual.html">Manual</a>
+    <a href="escrito.html">Escrito</a>
+    <a href="https://github.com/APAndresPenaloza/PROYECTOS_DE_ALGEBRA_LINEAL_Programa_de-Ingenieria_del_Agua_y_Desarrollo_Sostenible" target="_blank" rel="noopener">Código en GitHub</a>
+  </nav>
+</header>
+
+<div class="pestanas" role="tablist" aria-label="Módulos del simulador">
+  <button role="tab" data-mod="r2" aria-selected="true">Estaciones en planta <span class="esp">R², conjunto U</span></button>
+  <button role="tab" data-mod="r3" aria-selected="false">Puntos de la cuenca <span class="esp">R³, conjunto V</span></button>
+  <button role="tab" data-mod="comp" aria-selected="false">Composición</button>
+  <button role="tab" data-mod="rep" aria-selected="false">Informe con QR</button>
+  <span class="relleno"></span>
+  <button class="btn-recorrido" id="btn-recorrido" title="Presentación automática a pantalla completa, útil para grabar el video del proyecto">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6.4 5v6l4.8-3z" fill="currentColor"/></svg>Recorrido guiado</button>
+</div>
+
+<div id="banner" class="banner" role="status" aria-live="polite"></div>
+<div id="aviso" class="aviso" role="status" hidden></div>
+
+<main id="contenido">
+  <section class="banco" id="banco">
+    <aside class="mando" id="mando" aria-label="Controles"></aside>
+
+    <div class="visor" id="visor">
+      <div class="lienzo" id="lienzo"></div>
+      <div class="cajetin" id="cajetin" aria-live="off"></div>
+      <div class="visor-herr" id="visor-herr"></div>
+      <div class="rosa" id="rosa" hidden aria-hidden="true"><svg viewBox="-23 -31 46 62"><path d="M0 -26 L8 6 L0 0 L-8 6 Z" fill="#e9eff2"/><path d="M0 -26 L0 0 L-8 6 Z" fill="#8fa8b6"/><text x="0" y="22" text-anchor="middle" font-size="12" font-family="Barlow, sans-serif" fill="#e9eff2" font-weight="600">N</text></svg></div>
+      <div class="escala-graf" id="escala-graf" hidden aria-hidden="true"><span class="txt">1 km</span><div class="barra"></div></div>
+      <div class="motor-estado" id="motor-estado"><i></i>Cargando el núcleo C++…</div>
+      <div class="leyenda" id="leyenda"></div>
+      <div class="linea-tiempo">
+        <button class="play" id="t-play" aria-label="Animar la transformación desde la identidad"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></button>
+        <input type="range" id="t-rango" min="0" max="1" step="0.001" value="1" aria-label="Instante de la animación, de la identidad (0) a la matriz final">
+        <span class="t-val" id="t-val">t = 1</span>
+        <label class="vel" title="Velocidad de la animación; entre paréntesis, lo que dura cada paso"><span class="vel-txt">Velocidad</span>
+          <select id="t-vel" aria-label="Velocidad de la animación"></select></label>
+      </div>
+      <div class="subtitulo" id="subtitulo" hidden>
+        <h3 id="sub-h"></h3>
+        <p id="sub-p"></p>
+        <div class="ctrl"><span id="sub-n"></span><div class="progreso"><i id="sub-barra"></i></div>
+          <button id="sub-ant">Anterior</button><button id="sub-pausa">Pausa</button><button id="sub-sig">Siguiente</button><button id="sub-salir">Salir</button></div>
+      </div>
+    </div>
+
+    <section class="calculo" id="calculo" aria-label="Ecuaciones y resultados">
+      <div class="hoja-calc" id="calc-ec"></div>
+      <div class="hoja-lisa" id="calc-prop"></div>
+    </section>
+  </section>
+
+  <section class="modulo-informe" id="mod-rep" hidden></section>
+</main>
+
+<footer>
+  <p>Simulador de código abierto escrito en HTML, CSS y JavaScript, con un núcleo de cálculo en C++ compilado a WebAssembly y scripts de Python para cada transformación. Versión 1.0, noviembre de 2026. Validación interna: <span id="val-txt">pendiente</span>.</p>
+  <p><a href="informe.html">Informe del proyecto</a>, <a href="manual.html">manual de usuario</a> y <a href="escrito.html">escrito sobre la importancia de las transformaciones lineales</a>. Autor: Andrés Mauricio Peñaloza Fernández. Guía del proyecto: Dr. Ellery G. Chacuto López.</p>
+  <p>Bibliotecas: three.js r128, KaTeX 0.19.1 y qrcode-generator 1.4.4 de Kazuhiko Arase (licencia MIT); fuentes Barlow y Source Serif 4 (licencia SIL OFL). «QR Code» es marca registrada de DENSO WAVE INCORPORATED.</p>
+</footer>
+
+<script src="lib/three/three.min.js"></script>
+<script src="lib/three/OrbitControls.js"></script>
+<script src="lib/three/CSS2DRenderer.js"></script>
+<script src="lib/three/EffectComposer.js"></script>
+<script src="lib/three/RenderPass.js"></script>
+<script src="lib/three/ShaderPass.js"></script>
+<script src="lib/three/CopyShader.js"></script>
+<script src="lib/three/LuminosityHighPassShader.js"></script>
+<script src="lib/three/UnrealBloomPass.js"></script>
+<script src="lib/three/FXAAShader.js"></script>
+<script src="lib/katex/katex.min.js"></script>
+<script src="lib/qrcode.js"></script>
+
+<script src="js/ecuaciones/algebra.js"></script>
+<script src="js/ecuaciones/catalogo.js"></script>
+<script src="js/ecuaciones/latex.js"></script>
+<script src="js/ecuaciones/analisis.js"></script>
+<script src="js/ecuaciones/referencia.js"></script>
+<script src="js/wasm/motor-wasm-datos.js"></script>
+<script src="js/wasm/motor-wasm.js"></script>
+<script src="js/grafico/terreno.js"></script>
+<script src="js/grafico/shaders.js"></script>
+<script src="js/grafico/escena.js"></script>
+<script src="js/grafico/animador.js"></script>
+<script src="js/app/estado.js"></script>
+<script src="js/app/interfaz.js"></script>
+<script src="js/app/informe-qr.js"></script>
+<script src="js/app/recorrido.js"></script>
+<script src="js/app/validar.js"></script>
+<script src="js/app/principal.js"></script>
+</body>
+</html>

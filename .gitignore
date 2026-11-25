@@ -1,0 +1,10 @@
+# Compilación del motor C++
+cpp/motor
+cpp/pruebas_motor
+cpp/*.o
+# Python
+__pycache__/
+*.pyc
+# Sistema
+.DS_Store
+Thumbs.db

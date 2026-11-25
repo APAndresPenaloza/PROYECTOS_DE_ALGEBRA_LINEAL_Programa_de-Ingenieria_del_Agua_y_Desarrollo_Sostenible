@@ -1,0 +1,969 @@
+{
+  "proyecto": "Transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua",
+  "motor": "Python 3.13.18 + NumPy 2.5.3",
+  "fecha": "2026-11-25",
+  "alfa_grados": 8.13010235415598,
+  "parametros": {
+    "k_homotecia": 2.0,
+    "k_corte": 0.4,
+    "s_vertical": 2.0,
+    "theta_inclinacion": 10.0
+  },
+  "U": [
+    [
+      4.0,
+      5.0
+    ],
+    [
+      -3.0,
+      4.0
+    ]
+  ],
+  "V": [
+    [
+      4.0,
+      5.0,
+      3.0
+    ],
+    [
+      -3.0,
+      4.0,
+      4.0
+    ]
+  ],
+  "transformaciones": [
+    {
+      "clave": "T1",
+      "espacio": "R2",
+      "nombre": "Rotación de ejes para alinear el sistema con el tramo E2→E1",
+      "tipo": "rotacion",
+      "parametros": {
+        "theta_grados": -8.13010235415598,
+        "alfa_grados": 8.13010235415598
+      },
+      "matriz": [
+        [
+          0.9899494936611666,
+          0.14142135623730953
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666
+        ]
+      ],
+      "imagenes": [
+        [
+          4.666904755831214,
+          4.384062043356595
+        ],
+        [
+          -2.4041630560342617,
+          4.384062043356595
+        ]
+      ],
+      "propiedades": {
+        "n": 2,
+        "det": 1.0000000000000002,
+        "traza": 1.9798989873223332,
+        "rango": 2,
+        "ortogonal": true,
+        "conserva_distancias": true,
+        "conserva_angulos": true,
+        "conserva_medida": true,
+        "orientacion": "conserva",
+        "factor_medida": 1.0000000000000002,
+        "autovalores": [
+          [
+            0.989949493661167,
+            0.14142135623731
+          ],
+          [
+            0.989949493661167,
+            -0.14142135623731
+          ]
+        ],
+        "inversa": [
+          [
+            0.9899494936611664,
+            -0.1414213562373095
+          ],
+          [
+            0.14142135623730948,
+            0.9899494936611665
+          ]
+        ],
+        "condicion": 1.0000000000000002,
+        "valores_singulares": [
+          1.0000000000000002,
+          1.0
+        ]
+      },
+      "medidas": {
+        "distancia": [
+          7.0710678118654755,
+          7.0710678118654755
+        ],
+        "area_triangulo": [
+          15.5,
+          15.500000000000004
+        ],
+        "angulo_grados": [
+          75.52970589993411,
+          75.52970589993411
+        ]
+      }
+    },
+    {
+      "clave": "T2",
+      "espacio": "R2",
+      "nombre": "Homotecia: plano de localización a escala 1:50 000",
+      "tipo": "homotecia",
+      "parametros": {
+        "k": 2.0
+      },
+      "matriz": [
+        [
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "imagenes": [
+        [
+          8.0,
+          10.0
+        ],
+        [
+          -6.0,
+          8.0
+        ]
+      ],
+      "propiedades": {
+        "n": 2,
+        "det": 4.0,
+        "traza": 4.0,
+        "rango": 2,
+        "ortogonal": false,
+        "conserva_distancias": false,
+        "conserva_angulos": true,
+        "conserva_medida": false,
+        "orientacion": "conserva",
+        "factor_medida": 4.0,
+        "autovalores": [
+          [
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0
+          ]
+        ],
+        "inversa": [
+          [
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.5
+          ]
+        ],
+        "condicion": 1.0,
+        "valores_singulares": [
+          2.0,
+          2.0
+        ]
+      },
+      "medidas": {
+        "distancia": [
+          7.0710678118654755,
+          14.142135623730951
+        ],
+        "area_triangulo": [
+          15.5,
+          62.0
+        ],
+        "angulo_grados": [
+          75.52970589993411,
+          75.52970589993411
+        ]
+      }
+    },
+    {
+      "clave": "T3",
+      "espacio": "R2",
+      "nombre": "Cizallamiento horizontal: deformación por flujo cortante",
+      "tipo": "cizallamiento",
+      "parametros": {
+        "k": 0.4,
+        "direccion": "x",
+        "du_dy_h-1": 0.1,
+        "dt_h": 4.0
+      },
+      "matriz": [
+        [
+          1.0,
+          0.4
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "imagenes": [
+        [
+          6.0,
+          5.0
+        ],
+        [
+          -1.4,
+          4.0
+        ]
+      ],
+      "propiedades": {
+        "n": 2,
+        "det": 1.0,
+        "traza": 2.0,
+        "rango": 2,
+        "ortogonal": false,
+        "conserva_distancias": false,
+        "conserva_angulos": false,
+        "conserva_medida": true,
+        "orientacion": "conserva",
+        "factor_medida": 1.0,
+        "autovalores": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "inversa": [
+          [
+            1.0,
+            -0.4
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "condicion": 1.4879215610874228,
+        "valores_singulares": [
+          1.219803902718557,
+          0.819803902718557
+        ]
+      },
+      "medidas": {
+        "distancia": [
+          7.0710678118654755,
+          7.467261881037788
+        ],
+        "area_triangulo": [
+          15.5,
+          15.5
+        ],
+        "angulo_grados": [
+          75.52970589993411,
+          69.48447512692353
+        ]
+      }
+    },
+    {
+      "clave": "T4",
+      "espacio": "R3",
+      "nombre": "Rotación alrededor del eje z: alinear la cuenca con el cauce principal",
+      "tipo": "rotacion",
+      "parametros": {
+        "eje": "z",
+        "theta_grados": -8.13010235415598,
+        "alfa_grados": 8.13010235415598
+      },
+      "matriz": [
+        [
+          0.9899494936611666,
+          0.14142135623730953,
+          0.0
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "imagenes": [
+        [
+          4.666904755831214,
+          4.384062043356595,
+          3.0
+        ],
+        [
+          -2.4041630560342617,
+          4.384062043356595,
+          4.0
+        ]
+      ],
+      "propiedades": {
+        "n": 3,
+        "det": 1.0000000000000002,
+        "traza": 2.979898987322333,
+        "rango": 3,
+        "ortogonal": true,
+        "conserva_distancias": true,
+        "conserva_angulos": true,
+        "conserva_medida": true,
+        "orientacion": "conserva",
+        "factor_medida": 1.0000000000000002,
+        "autovalores": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.989949493661167,
+            0.14142135623731
+          ],
+          [
+            0.989949493661167,
+            -0.14142135623731
+          ]
+        ],
+        "inversa": [
+          [
+            0.9899494936611664,
+            -0.1414213562373095,
+            0.0
+          ],
+          [
+            0.14142135623730948,
+            0.9899494936611665,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "condicion": 1.0000000000000002,
+        "valores_singulares": [
+          1.0000000000000002,
+          1.0,
+          1.0
+        ]
+      },
+      "medidas": {
+        "distancia": [
+          7.14142842854285,
+          7.14142842854285
+        ],
+        "area_triangulo": [
+          20.310096011589902,
+          20.310096011589902
+        ],
+        "angulo_grados": [
+          63.785934659848834,
+          63.785934659848834
+        ],
+        "pendiente_p2_p1": [
+          -0.1414213562373095,
+          -0.1414213562373095
+        ]
+      }
+    },
+    {
+      "clave": "T5",
+      "espacio": "R3",
+      "nombre": "Escalamiento: exageración vertical 2:1 del modelo digital de elevación",
+      "tipo": "escalamiento",
+      "parametros": {
+        "sx": 1.0,
+        "sy": 1.0,
+        "sz": 2.0
+      },
+      "matriz": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "imagenes": [
+        [
+          4.0,
+          5.0,
+          6.0
+        ],
+        [
+          -3.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "propiedades": {
+        "n": 3,
+        "det": 2.0,
+        "traza": 4.0,
+        "rango": 3,
+        "ortogonal": false,
+        "conserva_distancias": false,
+        "conserva_angulos": false,
+        "conserva_medida": false,
+        "orientacion": "conserva",
+        "factor_medida": 2.0,
+        "autovalores": [
+          [
+            2.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "inversa": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.5
+          ]
+        ],
+        "condicion": 2.0,
+        "valores_singulares": [
+          2.0,
+          1.0,
+          1.0
+        ]
+      },
+      "medidas": {
+        "distancia": [
+          7.14142842854285,
+          7.3484692283495345
+        ],
+        "area_triangulo": [
+          20.310096011589902,
+          30.483602149352365
+        ],
+        "angulo_grados": [
+          63.785934659848834,
+          47.43169822644041
+        ],
+        "pendiente_p2_p1": [
+          -0.1414213562373095,
+          -0.282842712474619
+        ]
+      }
+    },
+    {
+      "clave": "T6",
+      "espacio": "R3",
+      "nombre": "Reflexión respecto al plano xy: de cotas a profundidades",
+      "tipo": "reflexion",
+      "parametros": {
+        "plano": "xy"
+      },
+      "matriz": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "imagenes": [
+        [
+          4.0,
+          5.0,
+          -3.0
+        ],
+        [
+          -3.0,
+          4.0,
+          -4.0
+        ]
+      ],
+      "propiedades": {
+        "n": 3,
+        "det": -1.0,
+        "traza": 1.0,
+        "rango": 3,
+        "ortogonal": true,
+        "conserva_distancias": true,
+        "conserva_angulos": true,
+        "conserva_medida": true,
+        "orientacion": "invierte",
+        "factor_medida": 1.0,
+        "autovalores": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "inversa": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -1.0
+          ]
+        ],
+        "condicion": 1.0,
+        "valores_singulares": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "medidas": {
+        "distancia": [
+          7.14142842854285,
+          7.14142842854285
+        ],
+        "area_triangulo": [
+          20.310096011589902,
+          20.310096011589902
+        ],
+        "angulo_grados": [
+          63.785934659848834,
+          63.785934659848834
+        ],
+        "pendiente_p2_p1": [
+          -0.1414213562373095,
+          0.1414213562373095
+        ]
+      }
+    }
+  ],
+  "composiciones": [
+    {
+      "clave": "C1",
+      "espacio": "R2",
+      "nombre": "Alinear con el tramo y dibujar a escala (H·R)",
+      "pasos": [
+        "T1 · rotación −α",
+        "T2 · homotecia k = 2"
+      ],
+      "producto": [
+        [
+          1.9798989873223332,
+          0.28284271247461906
+        ],
+        [
+          -0.28284271247461906,
+          1.9798989873223332
+        ]
+      ],
+      "producto_invertido": [
+        [
+          1.9798989873223332,
+          0.28284271247461906
+        ],
+        [
+          -0.28284271247461906,
+          1.9798989873223332
+        ]
+      ],
+      "conmutan": true,
+      "det": 4.000000000000001,
+      "imagenes": [
+        [
+          9.333809511662428,
+          8.76812408671319
+        ],
+        [
+          -4.8083261120685235,
+          8.76812408671319
+        ]
+      ],
+      "imagenes_invertido": [
+        [
+          9.333809511662428,
+          8.76812408671319
+        ],
+        [
+          -4.8083261120685235,
+          8.76812408671319
+        ]
+      ],
+      "lectura": "La homotecia es k·I y conmuta con cualquier matriz: el orden no importa."
+    },
+    {
+      "clave": "C2",
+      "espacio": "R2",
+      "nombre": "Rotar y luego aplicar el cortante (C·R) frente a cortar y luego rotar (R·C)",
+      "pasos": [
+        "T1 · rotación −α",
+        "T3 · cizallamiento k = 0,4"
+      ],
+      "producto": [
+        [
+          0.9333809511662428,
+          0.5374011537017762
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666
+        ]
+      ],
+      "producto_invertido": [
+        [
+          0.9899494936611666,
+          0.5374011537017762
+        ],
+        [
+          -0.14142135623730953,
+          0.9333809511662428
+        ]
+      ],
+      "conmutan": false,
+      "det": 1.0,
+      "imagenes": [
+        [
+          6.420529573173852,
+          4.384062043356595
+        ],
+        [
+          -0.6505382386916234,
+          4.384062043356595
+        ]
+      ],
+      "imagenes_invertido": [
+        [
+          6.646803743153548,
+          4.1012193308819755
+        ],
+        [
+          -0.8202438661763951,
+          4.1577878733769
+        ]
+      ],
+      "lectura": "C·R ≠ R·C: el producto de matrices no es conmutativo. El cortante aplicado en coordenadas del cauce no equivale al cortante aplicado en coordenadas este-norte."
+    },
+    {
+      "clave": "C3",
+      "espacio": "R2",
+      "nombre": "Cortante a lo largo del cauce: cambio de base R(α)·C·R(−α)",
+      "pasos": [
+        "T1 · rotación −α",
+        "T3 · cizallamiento k = 0,4",
+        "rotación +α (deshacer T1)"
+      ],
+      "producto": [
+        [
+          0.9440000000000001,
+          0.3920000000000001
+        ],
+        [
+          -0.007999999999999998,
+          1.056
+        ]
+      ],
+      "producto_invertido": [
+        [
+          1.056,
+          0.392
+        ],
+        [
+          -0.008000000000000016,
+          0.9440000000000001
+        ]
+      ],
+      "conmutan": false,
+      "det": 1.0000000000000002,
+      "imagenes": [
+        [
+          5.736000000000001,
+          5.248
+        ],
+        [
+          -1.2639999999999998,
+          4.248
+        ]
+      ],
+      "imagenes_invertido": [
+        [
+          6.184,
+          4.688000000000001
+        ],
+        [
+          -1.6,
+          3.8000000000000003
+        ]
+      ],
+      "lectura": "La conjugación R(α)·C·R(−α) es un cizallamiento cuya dirección invariante es el eje del tramo (7, 1): el flujo se desplaza paralelo al cauce. Como E1 y E2 tienen el mismo n, se desplazan lo mismo y su distancia no cambia."
+    },
+    {
+      "clave": "C4",
+      "espacio": "R3",
+      "nombre": "Perfil longitudinal exagerado (S·Rz)",
+      "pasos": [
+        "T4 · rotación z −α",
+        "T5 · exageración vertical 2:1"
+      ],
+      "producto": [
+        [
+          0.9899494936611666,
+          0.14142135623730953,
+          0.0
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "producto_invertido": [
+        [
+          0.9899494936611666,
+          0.14142135623730953,
+          0.0
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "conmutan": true,
+      "det": 2.0,
+      "imagenes": [
+        [
+          4.666904755831214,
+          4.384062043356595,
+          6.0
+        ],
+        [
+          -2.4041630560342617,
+          4.384062043356595,
+          8.0
+        ]
+      ],
+      "imagenes_invertido": [
+        [
+          4.666904755831214,
+          4.384062043356595,
+          6.0
+        ],
+        [
+          -2.4041630560342617,
+          4.384062043356595,
+          8.0
+        ]
+      ],
+      "lectura": "Rz actúa solo en el plano xy y S solo en z: actúan en subespacios invariantes complementarios y por eso conmutan."
+    },
+    {
+      "clave": "C5",
+      "espacio": "R3",
+      "nombre": "Perfil exagerado en convención de profundidades (F·S·Rz)",
+      "pasos": [
+        "T4 · rotación z −α",
+        "T5 · exageración vertical 2:1",
+        "T6 · reflexión plano xy"
+      ],
+      "producto": [
+        [
+          0.9899494936611666,
+          0.14142135623730953,
+          0.0
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -2.0
+        ]
+      ],
+      "producto_invertido": [
+        [
+          0.9899494936611666,
+          0.14142135623730953,
+          0.0
+        ],
+        [
+          -0.14142135623730953,
+          0.9899494936611666,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -2.0
+        ]
+      ],
+      "conmutan": true,
+      "det": -2.0,
+      "imagenes": [
+        [
+          4.666904755831214,
+          4.384062043356595,
+          -6.0
+        ],
+        [
+          -2.4041630560342617,
+          4.384062043356595,
+          -8.0
+        ]
+      ],
+      "imagenes_invertido": [
+        [
+          4.666904755831214,
+          4.384062043356595,
+          -6.0
+        ],
+        [
+          -2.4041630560342617,
+          4.384062043356595,
+          -8.0
+        ]
+      ],
+      "lectura": "det(F·S·Rz) = (−1)(2)(1) = −2: el volumen se duplica y la orientación se invierte."
+    },
+    {
+      "clave": "C6",
+      "espacio": "R3",
+      "nombre": "Inclinar y exagerar: el orden sí importa en R³ (S·Rx frente a Rx·S)",
+      "pasos": [
+        "rotación x 10° (inclinar)",
+        "T5 · exageración vertical 2:1"
+      ],
+      "producto": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.984807753012208,
+          -0.17364817766693033
+        ],
+        [
+          0.0,
+          0.34729635533386066,
+          1.969615506024416
+        ]
+      ],
+      "producto_invertido": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.984807753012208,
+          -0.34729635533386066
+        ],
+        [
+          0.0,
+          0.17364817766693033,
+          1.969615506024416
+        ]
+      ],
+      "conmutan": false,
+      "det": 1.9999999999999998,
+      "imagenes": [
+        [
+          4.0,
+          4.403094232060249,
+          7.645328294742551
+        ],
+        [
+          -3.0,
+          3.244638301381111,
+          9.267647445433107
+        ]
+      ],
+      "imagenes_invertido": [
+        [
+          4.0,
+          3.882149699059458,
+          6.7770874064079
+        ],
+        [
+          -3.0,
+          2.550045590713389,
+          8.573054734765385
+        ]
+      ],
+      "lectura": "Rx mezcla y con z; por eso no conmuta con la exageración vertical: exagerar un terreno ya inclinado no es lo mismo que inclinar un terreno exagerado."
+    }
+  ]
+}

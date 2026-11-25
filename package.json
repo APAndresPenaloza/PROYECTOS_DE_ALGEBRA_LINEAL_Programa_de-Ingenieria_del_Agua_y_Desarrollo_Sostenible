@@ -1,0 +1,17 @@
+{
+  "name": "transformaciones-lineales-r2-r3-ingenieria-del-agua",
+  "version": "1.0.0",
+  "description": "Simulador 3D de transformaciones lineales en R² y R³ aplicadas a la ingeniería del agua (Álgebra Lineal, Universidad de Santa Marta).",
+  "private": true,
+  "scripts": {
+    "pruebas": "node pruebas/motores.test.js",
+    "documentos": "node documentos/fuente/compilar.js",
+    "qr": "node documentos/fuente/generar_qr.js",
+    "servir": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "docx": "9.8.1"
+  },
+  "author": "Andrés Mauricio Peñaloza Fernández",
+  "license": "UNLICENSED"
+}

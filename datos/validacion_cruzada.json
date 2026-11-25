@@ -1,0 +1,85 @@
+{
+  "tolerancia": 1e-12,
+  "mayor_diferencia": 1.7763568394002505e-15,
+  "aprobado": true,
+  "motores": {
+    "python": "Python 3.13.18 + NumPy 2.5.3",
+    "cpp": "C++17 (g++ 13.3)",
+    "javascript": "JavaScript (Node v22.23.5)",
+    "wasm_vs_js_aleatorias": 0
+  },
+  "casos": [
+    {
+      "caso": "T1",
+      "python_cpp": 8.326672684688674e-16,
+      "python_js": 8.881784197001252e-16,
+      "cpp_js": 8.881784197001252e-16
+    },
+    {
+      "caso": "T2",
+      "python_cpp": 0.0,
+      "python_js": 0.0,
+      "cpp_js": 0.0
+    },
+    {
+      "caso": "T3",
+      "python_cpp": 0.0,
+      "python_js": 0.0,
+      "cpp_js": 0.0
+    },
+    {
+      "caso": "T4",
+      "python_cpp": 8.326672684688674e-16,
+      "python_js": 8.881784197001252e-16,
+      "cpp_js": 8.881784197001252e-16
+    },
+    {
+      "caso": "T5",
+      "python_cpp": 0.0,
+      "python_js": 0.0,
+      "cpp_js": 0.0
+    },
+    {
+      "caso": "T6",
+      "python_cpp": 0.0,
+      "python_js": 0.0,
+      "cpp_js": 0.0
+    },
+    {
+      "caso": "C1",
+      "python_cpp": 8.881784197001252e-16,
+      "python_js": 1.7763568394002505e-15,
+      "cpp_js": 1.7763568394002505e-15
+    },
+    {
+      "caso": "C2",
+      "python_cpp": 0.0,
+      "python_js": 2.7755575615628914e-17,
+      "cpp_js": 2.7755575615628914e-17
+    },
+    {
+      "caso": "C3",
+      "python_cpp": 2.220446049250313e-16,
+      "python_js": 2.220446049250313e-16,
+      "cpp_js": 0.0
+    },
+    {
+      "caso": "C4",
+      "python_cpp": 0.0,
+      "python_js": 8.881784197001252e-16,
+      "cpp_js": 8.881784197001252e-16
+    },
+    {
+      "caso": "C5",
+      "python_cpp": 0.0,
+      "python_js": 8.881784197001252e-16,
+      "cpp_js": 8.881784197001252e-16
+    },
+    {
+      "caso": "C6",
+      "python_cpp": 0.0,
+      "python_js": 0.0,
+      "cpp_js": 0.0
+    }
+  ]
+}
