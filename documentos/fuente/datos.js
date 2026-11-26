@@ -20,7 +20,7 @@ const CURSO = 'Álgebra Lineal Aplicada';
 const PROFESORES = {
   principal: 'PhD Ellery G. Chacuto López',   // autor de la guía del proyecto
   otros: [
-    { curso: CURSO, nombres: 'Luis Mario Duarte' },
+    { curso: 'Álgebra y Geometría Analítica', nombres: 'Luis Mario Duarte' },
     { curso: 'Introducción a las Ciencias del Agua y a la Tecnología', nombres: 'Ing. Jaris González e Ing. David De León' },
   ],
 };

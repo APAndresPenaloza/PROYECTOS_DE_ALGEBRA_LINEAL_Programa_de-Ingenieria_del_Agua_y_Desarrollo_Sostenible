@@ -109,7 +109,7 @@ Todos los cálculos y los informes se generan en el navegador; el sitio no tiene
 - Andrés Mauricio Peñaloza Fernández
 - Eliana Carolina María Wong Lubo
 
-Profesor principal: PhD Ellery G. Chacuto López (Álgebra Lineal Aplicada). Profesores: Luis Mario Duarte (Álgebra Lineal Aplicada); Ing. Jaris González e Ing. David De León (Introducción a las Ciencias del Agua y a la Tecnología).
+Profesor principal: PhD Ellery G. Chacuto López (Álgebra Lineal Aplicada). Profesores: Luis Mario Duarte (Álgebra y Geometría Analítica); Ing. Jaris González e Ing. David De León (Introducción a las Ciencias del Agua y a la Tecnología).
 
 ## Cómo citar
 
